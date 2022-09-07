@@ -30,6 +30,8 @@ looks at like "JE" model of sheet, for example:
 
 'N':Means Next Line, in fact, the max length of a line is 30, idk what will happen when you input sheet more than 30 in a line
 
+when input, you'll see "More?", means you can input multi lines in one time, just press enter twice to skip this feature.
+
 ### tone
 
 means your sheet's offset text of Main C Tone, for example, if "1=F", then tone="F"

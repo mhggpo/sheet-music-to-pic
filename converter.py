@@ -12,7 +12,7 @@ class SheetConverter:
         self.UNIT_HEIGHT_SIZE = 143
         self.UNIT_WIDTH_SIZE = 27
         self.TITLE_HEIGHT_SIZE = 40
-        self.SHEET_HEIGHT_SIZE = 60
+        self.SHEET_HEIGHT_SIZE = 40
         self.PATH = "./res/images/"
     def add_first_line(self,main='C',title='None',more=''):
         main='1='+main
@@ -48,7 +48,7 @@ class SheetConverter:
         #print(nx,ny)
         draw.text((nx,ny),source,(0,0,0))
         if dot:
-            draw.text((nx+3,ny-dot),'.',(0,0,0))
+            draw.text((nx,ny-dot),'.',(0,0,0))
         draw = ImageDraw.Draw(sheet)    
         #sheet.save('sheet.png')
         target.paste(sheet, (0, 0))
