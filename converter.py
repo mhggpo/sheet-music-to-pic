@@ -86,7 +86,7 @@ class SheetConverter:
                 sheet.paste(image_files[self.COL*row+col], (0 + self.UNIT_WIDTH_SIZE*col, 0 + (self.UNIT_HEIGHT_SIZE+self.SHEET_HEIGHT_SIZE)*row))
         target.paste(first_line_image,(0,0))
         target.paste(sheet,(0,self.TITLE_HEIGHT_SIZE))
-        target.save('target.png')
+        #target.save('target.png')
         return target
     
 #just for test

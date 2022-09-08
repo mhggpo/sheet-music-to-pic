@@ -6,7 +6,7 @@
 python3 ./main.py
 ```
 
-You'll see prompt information, then input your sheet and more to command line, if no error, you'll get result in "target.png".
+You'll see prompt information, then input your sheet and more to command line, if no error, you'll get result in "./target/target.png".
 
 
 

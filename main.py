@@ -29,9 +29,12 @@ if __name__=='__main__':
     more=input('Please Input More Information:')
     sep=input('Do you want to sepreate every not zero tone?(Y/N)')
     if sep:
-        if sep=='Y' or sep=='y':sheet=' 0 '.join(sheet.split(' '))
+        if sep=='Y' or sep=='y':
+            tempsheet=sheet.split(' ')
+            if len(tempsheet)<=15:sheet='0 '+' 0 '.join(tempsheet)
+            del tempsheet
     c=SheetConverter()
     p=SheetParser()
     target=c.concat_images(p.sourceParser(sheet),p.sheetParser(sheet,offset),main,name,more)
-    target.save('target.png')
-    print('Result Saved in target.png')
+    target.save('./target/target.png')
+    print('Result Saved in /target/target.png')
