@@ -1,7 +1,9 @@
 from sheetparser import SheetParser
 from converter import SheetConverter
+import os
 
 if __name__=='__main__':
+    if not os.path.exists('./target'):os.makedirs('./target')
     print('Please Input Sheet:')
     sheet=""
     t=[]
@@ -36,5 +38,5 @@ if __name__=='__main__':
     c=SheetConverter()
     p=SheetParser()
     target=c.concat_images(p.sourceParser(sheet),p.sheetParser(sheet,offset),main,name,more)
-    target.save('./target/target.png')
-    print('Result Saved in /target/target.png')
+    target.save('./target/'+(name if name else 'None')+'.png')
+    print('Result Saved in /target/'+(name if name else 'None')+'.png')
