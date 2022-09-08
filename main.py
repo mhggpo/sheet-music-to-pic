@@ -13,9 +13,6 @@ if __name__=='__main__':
             print('More?','')
             t.append(k)
         else:
-            sheet=' '.join(t)
-            del t
-            del k
             break
     offset=input('Please Input Offset:')
     if offset:
@@ -32,9 +29,14 @@ if __name__=='__main__':
     sep=input('Do you want to sepreate every not zero tone?(Y/N)')
     if sep:
         if sep=='Y' or sep=='y':
-            tempsheet=sheet.split(' ')
-            if len(tempsheet)<=15:sheet='0 '+' 0 '.join(tempsheet)
-            del tempsheet
+            for i in range(len(t)):
+                j=t[i].split(' ')
+                if len(j)<=15:
+                    t[i]='0 '+' 0 '.join(j)
+    for i in t:
+        sheet+=i+' '
+    del t
+    del k
     c=SheetConverter()
     p=SheetParser()
     target=c.concat_images(p.sourceParser(sheet),p.sheetParser(sheet,offset),main,name,more)
