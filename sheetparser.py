@@ -18,7 +18,7 @@ class SheetParser:
             '#5': 9, 
             '6': 10, 
             '#6': 11, 
-            '7': 12, 
+            '7': 12
         }
 
         self.name_convert_table={
@@ -50,6 +50,7 @@ class SheetParser:
             '25':'[[1]]',
         }
         self.upper_pattern=r'\[#?\d+\]'
+        self.max_pattern=r'\[\[#?\d+\]\]'
         self.downer_pattern=r'\(#?\d+\)'
     def sourceParser(self,sheet:str) -> List[List[str]]:
         res=[]
@@ -67,6 +68,9 @@ class SheetParser:
                 continue         
             elif m:=re.match(self.upper_pattern,s):
                 dot+=10
+                s=m.group()[1:-1]
+            elif m:=re.match(self.max_pattern,s):
+                dot+=15
                 s=m.group()[1:-1]
             elif m:=re.match(self.downer_pattern,s):
                 dot-=10
@@ -93,6 +97,9 @@ class SheetParser:
             elif m:=re.match(self.upper_pattern,s):
                 offset+=12
                 s=m.group()[1:-1]
+            elif m:=re.match(self.max_pattern,s):
+                offset+=24
+                s=m.group()[2:-2]
             elif m:=re.match(self.downer_pattern,s):
                 offset-=12
                 s=m.group()[1:-1]
