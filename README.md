@@ -28,7 +28,7 @@ looks at like "JE" model of sheet, for example:
 
 '0':Means Zero Tone, image will show space for it
 
-'N':Means Next Line, in fact, the max length of a line is 30, idk what will happen when you input sheet more than 30 in a line
+'N':Means Next Line, in fact, the max length of a line is 30, IDK what will happen when you input sheet more than 30 in a line
 
 when input, you'll see "More?", means you can input multi lines in one time, just press enter twice to skip this feature.
 
